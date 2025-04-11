@@ -3,6 +3,10 @@
 /* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+  
 /* Styles */
 body {
     font-family: 'Lexend Deca', sans-serif;
@@ -119,6 +123,29 @@ section {
     margin-top: 10px; 
 }
 
+.project-item {
+  animation: fadeInUp 0.6s ease-in-out;
+}
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+/*#home {
+    background: linear-gradient(145deg, #fce6d6, #fdeee0);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-radius: 20px;
+}*/
+
+.vtubegif {
+    animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  
 a.info-btn,
 a.link-btn {
     font-family: 'Lexend Deca', sans-serif;
@@ -168,11 +195,20 @@ nav {
 
 .site-name {
     color:rgb(28, 28, 122);
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
     display: flex;
     justify-content: center; 
+    background: linear-gradient(90deg, #ff0099, #28007b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+.site-name:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}  
 
 .nav-bar {
     list-style: none;
@@ -200,24 +236,31 @@ nav {
 /* Scroll to Top Button */
 #scrollTopBtn {
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 16px;
-    background-color: rgb(255, 0, 149);
+    font-size: 22px;
     color: white;
+    background-color: rgb(255, 0, 149);
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
     border: none;
-    border-radius: 50px;
+    border-radius: 50%;
     cursor: pointer;
     display: none; /* Initially hidden */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease; z-index: 999;
+  }
+  
+#scrollTopBtn i {
+    font-size: 24px;
 }
   
 #scrollTopBtn:hover {
-background-color:  #d91c68;
-transform: translateY(-3px);
+    background-color: #d91c68;
+    transform: translateY(-5px) scale(1.05);
 }
 
 /* Cat Cursor */
@@ -252,3 +295,85 @@ footer {
         gap: 20px;
     }
 }
+@media (max-width: 540px) {
+    .site-name {
+      font-size: 30px;
+    }
+  
+    .nav-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .vtubegif {
+      width: 200px;
+    }
+  
+    section {
+      padding: 30px 15px;
+    }
+}
+
+/*h2 {
+  color: #d91c68;
+  border-bottom: 2px dashed #ffb6c1;
+  display: inline-block;
+  padding-bottom: 5px;
+}*/
+
+.skills-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #f4cbcb;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: rgb(28, 28, 122);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+.skills-list i {
+    font-size: 18px;
+    color: rgb(255, 0, 149);
+}
+  
+.skill-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skills-list li:hover .skill-icon {
+    transform: rotate(8deg) scale(1.2);
+    color: #d91c68; /* pretty pink on hover */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}  
+  

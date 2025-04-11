@@ -26,3 +26,16 @@ document.addEventListener('mousemove', (e) => {
   cat.style.left = `${e.pageX}px`;
   cat.style.top = `${e.pageY}px`;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const itemFade = document.querySelectorAll(".fade-in");
+  const scrollWatcher = new IntersectionObserver((things, chill) => {
+    things.forEach(thing => {
+      if (thing.isIntersecting) {
+        thing.target.classList.add("visible");
+        chill.unobserve(thing.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  itemFade.forEach(item => scrollWatcher.observe(item));
+});
