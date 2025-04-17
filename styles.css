@@ -210,6 +210,13 @@ nav {
     transition: transform 0.3s ease;
 }  
 
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: rgb(255, 0, 149);
+  cursor: pointer;
+}
+
 .nav-bar {
     list-style: none;
     display: flex;
@@ -217,6 +224,7 @@ nav {
     gap: 50px;
     padding: 10px;
     margin-bottom: 5px;
+    transition: max-height 0.3s ease;
 }
 
 .nav-bar a {
@@ -247,7 +255,7 @@ nav {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    display: none; /* Initially hidden */
+    display: none; 
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -292,6 +300,8 @@ footer {
         flex-direction: column;
         align-items: center; 
         text-align: center;
+        max-height: 0;
+        overflow: hidden;
     }
 
     .nav-bar li {
@@ -302,6 +312,17 @@ footer {
     .nav-bar a {
         width: 100%;
         display: block;
+    }
+    
+    .nav-bar.show {
+        max-height: 300px; 
+    }
+    
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
     }
 
     .projects-grid {
