@@ -302,6 +302,7 @@ footer {
         text-align: center;
         max-height: 0;
         overflow: hidden;
+        display: none;
     }
 
     .nav-bar li {
@@ -315,6 +316,7 @@ footer {
     }
     
     .nav-bar.show {
+        display: flex;
         max-height: 300px; 
     }
     
