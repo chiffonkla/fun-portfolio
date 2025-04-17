@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.onscroll = function() {
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 200) {
-      scrollTopBtn.style.display = "block"; 
+      scrollTopBtn.style.display = "flex"; 
     } else {
       scrollTopBtn.style.display = "none"; 
     }
@@ -38,4 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
   itemFade.forEach(item => scrollWatcher.observe(item));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
 });
