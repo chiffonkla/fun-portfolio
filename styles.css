@@ -426,4 +426,44 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }  
-  
+
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: scale(0) translate(0, 0);
+  }
+  25% {
+    opacity: 0.5;
+    transform: scale(1) translate(var(--tx1), var(--ty1));
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2) translate(var(--tx2), var(--ty2));
+  }
+  75% {
+    opacity: 0.5;
+    transform: scale(1) translate(var(--tx3), var(--ty3));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translate(var(--tx4), var(--ty4));
+  }
+}
